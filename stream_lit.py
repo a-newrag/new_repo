@@ -3,11 +3,11 @@ from urllib.error import URLError
 import pandas as pd
 import altair as alt
 
-@st.cache_data
+@st.cache_data #caches the return data; called before function definition
 def get_UN_data():
     AWS_BUCKET_URL = "https://streamlit-demo-data.s3-us-west-2.amazonaws.com"
     df = pd.read_csv(AWS_BUCKET_URL + "/agri.csv.gz")
-    return df.set_index("Region")
+    return df.set_index("Region") #sets Region column as the index
 
 try:
     df = get_UN_data()
