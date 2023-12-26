@@ -1,5 +1,6 @@
 import streamlit as st
 from urllib.error import URLError
+import pandas as pd
 @st.cache_data
 def get_UN_data():
     AWS_BUCKET_URL = "https://streamlit-demo-data.s3-us-west-2.amazonaws.com"
